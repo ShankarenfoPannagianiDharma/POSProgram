@@ -1,0 +1,5 @@
+Msll: 3
+gff: 7
+12dds: 7
+fdbc: 3
+lop: 8

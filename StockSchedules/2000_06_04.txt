@@ -1,0 +1,3 @@
+Spoon: 12
+Monk: 32
+Planes: 2

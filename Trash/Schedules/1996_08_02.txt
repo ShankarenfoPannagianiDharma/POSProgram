@@ -1,0 +1,2 @@
+Bags: 2
+Polearms: 6

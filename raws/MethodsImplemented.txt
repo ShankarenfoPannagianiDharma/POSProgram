@@ -1,0 +1,38 @@
+getStockCountSets(boolean retail,boolean admin)  			: used for stock counts table in stock- returns grocery/retail item counts. Admin if true includes COGS data.
+excelRemove(boolean retail, String ItemID)					: Deletes a row from excel by shifting- database source is based by boolean (if true->database is retail)
+getPurchaseCost(JTable target) 								: Calculates the 3rd column's sum from jtable target.
+addPurchaseItem(JTable target, String[] inputs)  			: Adds a row to the target table, with inputs data.
+getExcelUniqueSet(boolean retail)			 				: Returns a String[] set of item types from either grocer or retail.
+getGrocerExcelData(boolean admin)							: Returns data of grocer. true admin value provides more info.
+getRetailExcelData(boolean admin)							: Returns data of retail. true admin value provides more info.
+getExcelData(boolean retail)								: Fetches full data from either retail or grocer
+findItem(boolean retail, String filter)		 				: Returns a String[] or null for full data in either retail or grocer using code filter.
+addNewItem(boolean retail, String[] inputs)					: Adds an item to either retail/grocer table with full knowledge.
+getItemIDs(boolean retail)									: Get all item IDs from either retail or grocer.
+findItemInstances(boolean retail, itemname)					: Returns an arraylist of IDs that has [itemname] as name.		
+updateExcel(boolean retail, String itemid, String newname, 	: Updates itemid row in either retail/grocer with parameter data.
+			Long newcost, int newstack, Long newCOGS)
+makeBill(ArrayList<String[]> purchaseditems, long totalcost,: Creates a bill string from purchaseditems, with precalculated math.
+		 long payment, long change, long salecost)
+collectionsearch(boolean retail, int columnfocus, 			: Returns an arraylist of strings where matches exist between input and columnfocus. (used for dynamic searching)
+		 		 String input)		 
+getItemTypes(boolean retail)								: Returns unique set of items that exist in retail/grocery
+getItemData(String itemtype)								: Returns the String array of price, cogs and stack of itemtype
+addItemType(boolean retail, String[] inputs)				: Adds new itemtype to the database, with full knowledge.
+itemTypeChange(boolean retail,String itemtype,				: with full knowledge, changes the itemtype to the following data, as well as any instances of itemtype.
+			   String typename,long typecost,long typeCOGS,
+			   int typestck)
+deleteItemType(boolean retail, String itemtype)				: deletes itemtype from the types database, as well as any items having name itemtype.
+buildSchdlScrl()											: Void method, builds the panel for schedules. Reads every file in schedule folder and makes independent panels for each one.
+getStockingYearRange()										: Method that returns the range of relevant years in the schedule (for search purposes)
+getAllSchedules()											: Method to return the schedules that exist in folder.
+getBillYearRange()											: Method that searches the bill files location for folders- reading their range. Returns the numbers relevant (bills exist in these years)
+buildBillScrl()												: Void method, builds the panel for Bills. Depending on global booleans, will decide the category and type of bills to compile ([Grocer/Retail] | [Individual,Daily,Monthly])
+buildIndividualBills(boolean retail)						: Populates panel with each bills saved.
+buildDailyReports(boolean retail)							: Populates panel with Daily reports in folder.
+buildMonthlyReports(boolean retail)							: Populates panel with monthly reports in folder.
+getAllBills()												: Method to acquire all bill names
+deleteBill(String target)									: Using the target (which is in a specific format), the method moves a file depending on global booleans to trash.
+folderCleanup(File fileLocation) 							: Recursive method to delete empty subfolders in filelocation.
+refreshTables()												: Resets tables, comboboxes, etc. Used to update components.
+
